@@ -140,7 +140,10 @@ def usuarios_delete(request):
 def emprestimos(request):
     livros = Livro.objects.all()
     usuarios = Usuario.objects.all()
-   
+    context = {
+        'livros': livros,
+        'usuarios': usuarios,
+    }
 
     if request.method == 'POST':
         livro_id = request.POST.get('livro_id')
@@ -149,17 +152,26 @@ def emprestimos(request):
 
         livro = get_object_or_404(Livro, pk=livro_id)
         usuario = get_object_or_404(Usuario, pk=usuario_id)
-        
+
         if livro.quantidade_disponivel > 0:
             livro.quantidade_disponivel -= 1
             livro.save()
+            Emprestimo.objects.create(
+                livro=livro,
+                usuario=usuario,
+                data_devolucao=data_devolucao
+            )
+            context.update({
+                'success': 'Empréstimo realizado com sucesso!',
+                'livro': livro,
+                'usuario': usuario,
+                'livro_selecionado_id': livro.id,
+                'usuario_selecionado_id': usuario.id,
+            })
+        else:
+            context['error'] = 'Livro indisponível para empréstimo.'
 
-            
-            Emprestimo.objects.create(livro=livro, usuario=usuario, data_devolucao=data_devolucao)
-
-            
-
-    return render(request, 'core/emprestimo/emprestimos.html')
+    return render(request, 'core/emprestimo/emprestimos.html', context)
     
 
 def relatorios(request):

@@ -17,23 +17,23 @@
             {% csrf_token %}
             <label for="livro_id">Livro:</label>
             <select name="livro_id" required>
-                <option value="">-- Escolha um livro --</option>
-                {% for livro in livros %}
-                    <option value="{{ livro.id }}" {% if livro == livro %}selected{% endif %}>
-                        {{ livro.titulo }} (Disponíveis: {{ livro.quantidade_disponivel }})
-                    </option>
-                {% endfor %}
+         <option value="">-- Escolha um livro --</option>
+             {% for livro in livros %}
+                <option value="{{ livro.id }}" {% if livro.id == livro_selecionado_id %}selected{% endif %}>
+            {{ livro.titulo }} (Disponíveis: {{ livro.quantidade_disponivel }})
+                </option>
+             {% endfor %}
             </select>
 
             <label for="usuario_id">Usuário:</label>
-            <select name="usuario_id" required>
-                <option value="">-- Escolha um usuário --</option>
-                {% for usuario in usuarios %}
-                    <option value="{{ usuario.id }}" {% if usuario == usuario %}selected{% endif %}>
-                        {{ usuario.nome }} ({{ usuario.email }})
-                    </option>
-                {% endfor %}
-            </select>
+           <select name="usuario_id" required>
+    <option value="">-- Escolha um usuário --</option>
+    {% for usuario in usuarios %}
+        <option value="{{ usuario.id }}" {% if usuario.id == usuario_selecionado_id %}selected{% endif %}>
+            {{ usuario.nome }} ({{ usuario.email }})
+        </option>
+    {% endfor %}
+</select>
 
             <label for="data_devolucao">Data de Devolução:</label>
             <input type="date" name="data_devolucao" required>
