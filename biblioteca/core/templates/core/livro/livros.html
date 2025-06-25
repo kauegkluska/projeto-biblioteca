@@ -1,0 +1,40 @@
+{% extends "core/base.html" %}
+
+{% block title %}Livros{% endblock %}
+
+{% block content %}
+    <h2>Catálogo de Livros</h2>
+    <p>Gerencie os livros disponíveis na biblioteca.</p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livro in livros %}
+                <tr>
+                    <td>{{ livro.id }}</td>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.autor }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <a href="{% url 'livro_create' %}" class="btn btn-primary">Adicionar Livro</a>
+                    <a href="{% url 'livro_edit' %}" class="btn btn-secondary">Editar Livro</a>
+                    <a href="{% url 'livro_delete' %}" class="btn btn-danger">Excluir Livro</a>
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+{% endblock %}

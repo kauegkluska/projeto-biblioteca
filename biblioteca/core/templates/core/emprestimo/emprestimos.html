@@ -1,0 +1,54 @@
+{% extends "core/base.html" %}
+
+{% block title %}Empréstimos{% endblock %}
+
+{% block content %}
+  <body>
+    <div class="container">
+        <h1>Realizar Empréstimo</h1>
+
+        {% if success %}
+            <div class="success">{{ success }}</div>
+        {% elif error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="livro_id">Livro:</label>
+            <select name="livro_id" required>
+                <option value="">-- Escolha um livro --</option>
+                {% for livro in livros %}
+                    <option value="{{ livro.id }}" {% if livro == livro %}selected{% endif %}>
+                        {{ livro.titulo }} (Disponíveis: {{ livro.quantidade_disponivel }})
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label for="usuario_id">Usuário:</label>
+            <select name="usuario_id" required>
+                <option value="">-- Escolha um usuário --</option>
+                {% for usuario in usuarios %}
+                    <option value="{{ usuario.id }}" {% if usuario == usuario %}selected{% endif %}>
+                        {{ usuario.nome }} ({{ usuario.email }})
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label for="data_devolucao">Data de Devolução:</label>
+            <input type="date" name="data_devolucao" required>
+            
+
+            <button type="submit">Confirmar Empréstimo</button>
+        </form>
+
+        {% if livro and usuario %}
+        <div class="info">
+            <h3>Resumo do Empréstimo:</h3>
+            <p><strong>Livro:</strong> {{ livro.titulo }}</p>
+            <p><strong>Usuário:</strong> {{ usuario.nome }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}

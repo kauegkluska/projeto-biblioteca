@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+
+{% block title %}Usuários{% endblock %}
+
+{% block content %}
+    <h2>Cadastro de Usuários</h2>
+    <p>Gerencie os usuários da biblioteca.</p>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.id }}</td>
+                    <td>{{ usuario.nome }}</td>
+                    <td>{{ usuario.email }}</td>
+                     
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <a href="{% url 'usuario_create' %}" class="btn btn-primary">Adicionar Usuário</a>
+                    <a href="{% url 'usuario_edit' %}" class="btn btn-secondary">Editar Usuário</a>
+                    
+                    <a href="{% url 'usuario_delete' %}" class="btn btn-danger">Excluir Usuário</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

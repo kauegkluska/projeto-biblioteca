@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Biblioteca</h1>
+        <nav>
+            <a href="{% url 'index' %}">Início</a>
+            <a href="{% url 'livros' %}">Livros</a>
+            <a href="{% url 'usuarios' %}">Usuários</a>
+            <a href="{% url 'emprestimos' %}">Empréstimos</a>
+            <a href="{% url 'relatorios' %}">Relatórios</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Biblioteca Digital</p>
+    </footer>
+</body>
+</html>

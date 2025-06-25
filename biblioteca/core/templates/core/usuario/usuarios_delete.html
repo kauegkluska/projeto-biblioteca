@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% block title %}Excluir Usuário{% endblock %}
+
+{% block content %}
+    <h2>Excluir usuario</h2>
+
+    {% if success %}
+        <div class="alert alert-success">Usuário excluído com sucesso!</div>
+    {% endif %}
+
+    <form method="post" action="{% url 'usuario_delete' %}">
+        {% csrf_token %}
+        <label>Selecione o usuário que deseja excluir</label><br>
+        <select name="usuario_id">
+            {% for usuario in usuarios %}
+                <option value="{{ usuario.id }}">{{ usuario.nome }}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+{% endblock %}
