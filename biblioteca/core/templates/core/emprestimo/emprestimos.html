@@ -1,54 +1,66 @@
 {% extends "core/base.html" %}
-
-{% block title %}Empréstimos{% endblock %}
-
+{% load static %}
 {% block content %}
-  <body>
-    <div class="container">
-        <h1>Realizar Empréstimo</h1>
 
-        {% if success %}
-            <div class="success">{{ success }}</div>
-        {% elif error %}
-            <div class="error">{{ error }}</div>
-        {% endif %}
+<h1>Gestão de Empréstimos</h1>
 
-        <form method="post">
-            {% csrf_token %}
-            <label for="livro_id">Livro:</label>
-            <select name="livro_id" required>
-         <option value="">-- Escolha um livro --</option>
-             {% for livro in livros %}
-                <option value="{{ livro.id }}" {% if livro.id == livro_selecionado_id %}selected{% endif %}>
-            {{ livro.titulo }} (Disponíveis: {{ livro.quantidade_disponivel }})
-                </option>
-             {% endfor %}
-            </select>
-
-            <label for="usuario_id">Usuário:</label>
-           <select name="usuario_id" required>
-    <option value="">-- Escolha um usuário --</option>
-    {% for usuario in usuarios %}
-        <option value="{{ usuario.id }}" {% if usuario.id == usuario_selecionado_id %}selected{% endif %}>
-            {{ usuario.nome }} ({{ usuario.email }})
-        </option>
-    {% endfor %}
-</select>
-
-            <label for="data_devolucao">Data de Devolução:</label>
-            <input type="date" name="data_devolucao" required>
-            
-
-            <button type="submit">Confirmar Empréstimo</button>
-        </form>
-
-        {% if livro and usuario %}
-        <div class="info">
-            <h3>Resumo do Empréstimo:</h3>
-            <p><strong>Livro:</strong> {{ livro.titulo }}</p>
-            <p><strong>Usuário:</strong> {{ usuario.nome }}</p>
-        </div>
-        {% endif %}
+{% if success %}
+    <div class="alert-success">
+        {{ success }}
     </div>
-</body>
+{% endif %}
+
+<div class="top-bar">
+    <form method="get" action="">
+        <input type="text" name="q" placeholder="Buscar por usuário, livro ou data" value="{{ query }}" />
+        <button type="submit">Buscar</button>
+    </form>
+
+    <a href="{% url 'emprestimos_create' %}">
+        <button type="button">Adicionar Empréstimo</button>
+    </a>
+</div>
+
+<table class="tabela-emprestimos">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuário</th>
+            <th>Livro</th>
+            <th>Data Empréstimo</th>
+            <th>Devolvido</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for emp in emprestimos %}
+            <tr>
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.usuario.nome }}</td>
+                <td>{{ emp.livro.titulo }}</td>
+                <td>{{ emp.data_emprestimo }}</td>
+                <td>{{ emp.devolvido|yesno:"Sim,Não" }}</td>
+                <td>
+                    {% if not emp.devolvido %}
+                    <form method="post" class="inline-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="emprestimo_id" value="{{ emp.id }}">
+                        <button type="submit" name="devolver">Devolver</button>
+                    </form>
+                    {% endif %}
+                    <form method="post" class="inline-form" onsubmit="return confirm('Confirmar exclusão do empréstimo?');">
+                        {% csrf_token %}
+                        <input type="hidden" name="emprestimo_id" value="{{ emp.id }}">
+                        <button type="submit" name="excluir">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="6">Nenhum empréstimo encontrado.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}

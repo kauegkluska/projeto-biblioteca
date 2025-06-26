@@ -1,0 +1,94 @@
+<!--
+  @file emprestimos.html
+  @brief Template para a página de realização de empréstimos no sistema de biblioteca.
+
+  Este template estende o template base e define o conteúdo específico para a funcionalidade
+  de realizar um empréstimo, permitindo selecionar livro, usuário e data de devolução.
+
+  @details
+  - Exibe mensagens de sucesso ou erro após tentativa de empréstimo.
+  - Possui formulário com:
+    * Seleção de livro disponível
+    * Seleção de usuário
+    * Data para devolução do livro
+  - Após submissão, exibe resumo do empréstimo selecionado.
+  
+  @author ---
+  @version 1.0
+  @date 2025
+-->
+
+{% extends "core/base.html" %}
+
+{% block title %}Empréstimos{% endblock %}
+
+{% block content %}
+  <!--
+    @section content Conteúdo principal para realizar empréstimos.
+
+    @element div.container Container principal do formulário.
+
+    @element h1 Título da página: "Realizar Empréstimo".
+
+    @element success Mensagem exibida quando o empréstimo é realizado com sucesso.
+    @element error Mensagem exibida caso haja erro no processo.
+
+    @element form Formulário para submissão dos dados do empréstimo.
+      - Método POST e proteção CSRF.
+      - Campo select "livro_id" com opções de livros disponíveis para empréstimo.
+      - Campo select "usuario_id" com opções de usuários cadastrados.
+      - Campo input "data_devolucao" para seleção da data limite de devolução.
+      - Botão submit para confirmar o empréstimo.
+
+    @element div.info Resumo do empréstimo realizado, exibido se livro e usuário estiverem definidos.
+      - Mostra título do livro e nome do usuário selecionados.
+  -->
+  <body>
+    <div class="container">
+        <h1>Realizar Empréstimo</h1>
+
+        {% if success %}
+            <div class="success">{{ success }}</div>
+        {% elif error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="livro_id">Livro:</label>
+            <select name="livro_id" required>
+                <option value="">-- Escolha um livro --</option>
+                {% for livro in livros %}
+                <option value="{{ livro.id }}" {% if livro_selecionado and livro.id == livro_selecionado.id %}selected{% endif %}>
+                {{ livro.titulo }} (Disponíveis: {{ livro.quantidade_disponivel }})
+                 </option>
+                {% endfor %}
+            </select>
+
+            <label for="usuario_id">Usuário:</label>
+            <select name="usuario_id" required>
+                <option value="">-- Escolha um usuário --</option>
+                {% for usuario in usuarios %}
+             <option value="{{ usuario.id }}" {% if usuario_selecionado and usuario.id == usuario_selecionado.id %}selected{% endif %}>
+                 {{ usuario.nome }} ({{ usuario.email }})
+                </option>
+            {% endfor %}
+            </select>
+
+            <label for="data_devolucao">Data de Devolução:</label>
+            <input type="date" name="data_devolucao" required>
+            
+
+            <button type="submit">Confirmar Empréstimo</button>
+        </form>
+
+        {% if livro and usuario %}
+        <div class="info">
+            <h3>Resumo do Empréstimo:</h3>
+            <p><strong>Livro:</strong> {{ livro.titulo }}</p>
+            <p><strong>Usuário:</strong> {{ usuario.nome }}</p>
+        </div>
+        {% endif %}
+    </div>
+  </body>
+{% endblock %}

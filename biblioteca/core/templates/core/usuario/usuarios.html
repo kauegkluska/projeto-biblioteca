@@ -1,3 +1,23 @@
+<!--
+  @file usuarios.html
+  @brief Template para exibição e gerenciamento de usuários no sistema da biblioteca.
+
+  Este template herda o layout base e preenche os blocos de título e conteúdo para listar
+  os usuários cadastrados na biblioteca, exibindo seus dados principais em uma tabela.
+
+  @section title Define o título da página como "Usuários".
+
+  @section content
+  - Exibe um cabeçalho e uma descrição da página.
+  - Apresenta uma tabela com colunas ID, Nome, Email e Ações.
+  - Itera sobre a lista "usuarios" para preencher as linhas da tabela com os dados dos usuários.
+  - No rodapé da tabela, há botões para adicionar, editar e excluir usuários, com links para as URLs apropriadas do Django.
+
+  @author ---
+  @version 1.0
+  @date 2025
+-->
+
 {% extends "core/base.html" %}
 
 {% block title %}Usuários{% endblock %}
@@ -5,14 +25,18 @@
 {% block content %}
     <h2>Cadastro de Usuários</h2>
     <p>Gerencie os usuários da biblioteca.</p>
-
+    
+        <a href="{% url 'usuario_create' %}" ><button type="button" class=" botao-link">Adicionar Usuário</button></a>
+        <a href="{% url 'usuario_edit' %}"><button type="button" class=" botao-link">Editar Usuário</button></a>
+        <a href="{% url 'usuario_delete' %}"><button type="button" class=" botao-link">Excluir Usuário</button></a>
+             
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Ações</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -21,19 +45,12 @@
                     <td>{{ usuario.id }}</td>
                     <td>{{ usuario.nome }}</td>
                     <td>{{ usuario.email }}</td>
-                     
                 </tr>
             {% endfor %}
         </tbody>
         <tfoot>
-            <tr>
-                <td colspan="4">
-                    <a href="{% url 'usuario_create' %}" class="btn btn-primary">Adicionar Usuário</a>
-                    <a href="{% url 'usuario_edit' %}" class="btn btn-secondary">Editar Usuário</a>
-                    
-                    <a href="{% url 'usuario_delete' %}" class="btn btn-danger">Excluir Usuário</a>
-                </td>
-            </tr>
+            
+                
         </tfoot>
     </table>
 {% endblock %}

@@ -1,3 +1,22 @@
+<!--
+  @file livro_delete.html
+  @brief Template para exclusão de livros no sistema de biblioteca.
+
+  Este template estende o template base e permite ao usuário selecionar
+  um livro para exclusão, exibindo uma confirmação de sucesso após a operação.
+
+  @block title Define o título da página como "Livros".
+  
+  @block content
+  - Exibe o título da seção "Excluir Livro".
+  - Se a exclusão for bem-sucedida, mostra uma mensagem de sucesso.
+  - Exibe um formulário para seleção do livro a ser excluído.
+    - O formulário envia uma requisição POST para a URL nomeada 'livro_delete'.
+    - Inclui token CSRF para proteção.
+    - Dropdown populado dinamicamente com os livros disponíveis.
+    - Botão para confirmar exclusão com estilo de alerta (vermelho).
+-->
+
 {% extends "core/base.html" %}
 
 {% block title %}Livros{% endblock %}
@@ -20,3 +39,4 @@
         <button type="submit" class="btn btn-danger">Excluir</button>
     </form>
 {% endblock %}
+

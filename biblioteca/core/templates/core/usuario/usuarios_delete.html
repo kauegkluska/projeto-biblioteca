@@ -1,4 +1,24 @@
+<!--
+  @file usuario_delete.html
+  @brief Template para exclusão de usuários no sistema.
+
+  Este template estende o template base "core/base.html" e define o conteúdo
+  para a página de exclusão de usuários.
+
+  @block title Define o título da página como "Excluir Usuário".
+  @block content Contém o formulário para selecionar e excluir um usuário.
+
+  @details
+  - Exibe um título "Excluir usuario".
+  - Se a exclusão for bem-sucedida, exibe uma mensagem de sucesso.
+  - Apresenta um formulário POST que envia a requisição para a URL 'usuario_delete'.
+  - Inclui proteção CSRF via token.
+  - Dropdown para selecionar o usuário pelo nome, usando o id como valor.
+  - Botão vermelho para confirmar exclusão.
+-->
+
 {% extends "core/base.html" %}
+
 {% block title %}Excluir Usuário{% endblock %}
 
 {% block content %}

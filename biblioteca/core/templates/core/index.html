@@ -1,8 +1,34 @@
 {% extends "core/base.html" %}
+<!--
+    /**
+     * Template de página inicial do sistema de biblioteca.
+     *
+     * Este template estende `core/base.html` e preenche os blocos `title` e `content`
+     * com conteúdo específico da página de boas-vindas.
+     *
+     * @file index.html
+     * @extends core/base.html
+     * @block title Define o título da aba como "Início"
+     * @block content Renderiza mensagem de boas-vindas ao usuário
+     */
+-->
 
 {% block title %}Início{% endblock %}
+<!--
+    /**
+     * Bloco de título da aba do navegador.
+     * Substitui o valor padrão "Biblioteca" definido no template base.
+     */
+-->
 
 {% block content %}
+    <!--
+        /**
+         * Bloco principal de conteúdo.
+         *
+         * Exibe uma saudação e orientação inicial ao usuário.
+         */
+    -->
     <h2>Bem-vindo ao sistema de biblioteca!</h2>
     <p>Escolha uma opção no menu acima para começar.</p>
 {% endblock %}

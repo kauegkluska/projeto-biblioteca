@@ -1,3 +1,35 @@
+<!--
+  @file editar_livro.html
+  @brief Template para edição de livros no sistema de biblioteca.
+
+  Este template estende o base.html e fornece um formulário para editar os dados de um livro existente.
+  Mostra uma mensagem de sucesso após cadastro e permite escolher o livro a ser editado a partir de uma lista.
+
+  @block title Define o título da página como "Livros".
+  @block content Conteúdo principal da página com formulário para edição dos dados do livro.
+
+  @form method POST para envio dos dados do livro a ser atualizado.
+  @csrf_token Proteção contra CSRF do Django.
+
+  @fields
+    - livro_id: Select para escolher o livro existente.
+    - titulo: Campo texto para título do livro.
+    - autor: Campo texto para autor do livro.
+    - editora: Campo texto para editora.
+    - ano_publicacao: Campo numérico para ano de publicação.
+    - isbn: Campo texto para código ISBN.
+    - quantidade_total: Campo numérico para quantidade total de exemplares.
+    - quantidade_disponivel: Campo numérico para exemplares disponíveis.
+
+  @button Botão para enviar o formulário com o texto "Cadastrar".
+
+  @conditional success Exibe mensagem de sucesso caso cadastro tenha ocorrido.
+
+  @author ---
+  @version 1.0
+  @date 2025
+-->
+
 {% extends "core/base.html" %}
 
 {% block title %}Livros{% endblock %}
@@ -42,4 +74,4 @@
     <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
 
-  {%endblock %}
+{% endblock %}

@@ -1,24 +1,39 @@
+:root {
+    --cor-primaria: #004080;
+    --cor-secundaria: #f4f4f4;
+    --cor-sucesso: #d4edda;
+    --cor-sucesso-texto: #155724;
+    --cor-titulo: #333;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--cor-secundaria);
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
-    background-color: #004080;
+    background-color: var(--cor-primaria);
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.8rem;
+}
+
+nav {
+    margin-top: 0.5rem;
 }
 
 nav a {
     color: white;
     margin-right: 15px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 main {
@@ -32,4 +47,84 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Botões e formulários */
+
+button, input[type="submit"], input[type="button"] {
+    padding: 8px 14px;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #003366;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: auto;
+}
+
+/* Tabelas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e0e0e0;
+}
+
+.success {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-sucesso-texto);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Layout auxiliar */
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inline {
+    display: inline;
+}
+
+a.button-link {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+a.button-link:hover {
+    background-color: #003366;
+}
+
+#graficoEmprestimos {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
 }

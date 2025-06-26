@@ -1,3 +1,25 @@
+<!--
+  @file cadastrar_livro.html
+  @brief Template para cadastro de um novo livro no sistema.
+
+  Estende o template base da aplicação e define o título da página como "Cadastrar Livro".
+  Contém um formulário para entrada dos dados do livro, como título, autor, editora,
+  ano de publicação, ISBN, quantidade total e quantidade disponível.
+
+  @block title Define o título da aba/janela do navegador.
+  @block content Conteúdo principal da página que exibe o formulário de cadastro.
+
+  @details
+  - Exibe mensagem de sucesso após cadastro bem-sucedido.
+  - Utiliza token CSRF para proteção contra ataques CSRF.
+  - Todos os campos do formulário são simples inputs HTML com labels descritivos.
+  - Botão para enviar o formulário e cadastrar o livro.
+
+  @author ---
+  @version 1.0
+  @date 2025
+-->
+
 {% extends 'core/base.html' %}
 
 {% block title %}Cadastrar Livro{% endblock %}

@@ -6,35 +6,42 @@
     <h2>Catálogo de Livros</h2>
     <p>Gerencie os livros disponíveis na biblioteca.</p>
 
-    <table class="table table-striped">
+    <form method="get" action="." class="form-busca">
+        <input type="text" name="q" placeholder="Pesquisar por título ou autor" value="{{ query }}">
+        <button type="submit" class="botao-link">Pesquisar</button>
+        
+        <a href="{% url 'livro_create' %}" 
+        ><button type="button" class="botao-link">
+            Adicionar Livro
+        </button>
+        </a>
+        <a href="{% url 'livro_edit' %}"><button type="button" class="botao-link">Editar Livro</button> </a>
+        <a href="{% url 'livro_delete' %}"><button type="button" class="botao-link">Excluir Livro</button> </a>
+    </form>
+
+    <table class="tabela-listagem">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Autor</th>
-                <th>Ações</th>
+                
             </tr>
         </thead>
         <tbody>
             {% for livro in livros %}
-                <tr>
-                    <td>{{ livro.id }}</td>
-                    <td>{{ livro.titulo }}</td>
-                    <td>{{ livro.autor }}</td>
-                </tr>
+            <tr>
+                <td>{{ livro.id }}</td>
+                <td>{{ livro.titulo }}</td>
+                <td>{{ livro.autor }}</td>
+                
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">Nenhum livro encontrado.</td>
+            </tr>
             {% endfor %}
         </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="4">
-                    <a href="{% url 'livro_create' %}" class="btn btn-primary">Adicionar Livro</a>
-                    <a href="{% url 'livro_edit' %}" class="btn btn-secondary">Editar Livro</a>
-                    <a href="{% url 'livro_delete' %}" class="btn btn-danger">Excluir Livro</a>
-                </td>
-            </tr>
-        </tfoot>
-
+        
     </table>
-
-
 {% endblock %}

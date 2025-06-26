@@ -1,0 +1,101 @@
+titulo,autor,editora,ano_publicacao,isbn,quantidade_total,quantidade_disponivel,genero_id
+O Pequeno Príncipe,Antoine de Saint-Exupéry,Agir,1943,9788522000001,5,5,5
+Dom Quixote,Miguel de Cervantes,Penguin Companhia,1605,9788522000002,5,5,5
+Cem Anos de Solidão,Gabriel García Márquez,Record,1967,9788522000003,7,7,5
+Orgulho e Preconceito,Jane Austen,Martin Claret,1813,9788522000004,6,6,6
+1984,George Orwell,Companhia das Letras,1949,9788522000005,4,4,5
+Crime e Castigo,Fiódor Dostoiévski,Editora 34,1866,9788522000006,2,2,14
+O Senhor dos Anéis,J.R.R. Tolkien,Martins Fontes,1954,9788522000007,8,8,9
+Ulisses,James Joyce,Companhia das Letras,1922,9788522000008,1,1,5
+Em Busca do Tempo Perdido,Marcel Proust,Globo Livros,1913,9788522000009,2,2,5
+A Divina Comédia,Dante Alighieri,L&PM Editores,1320,9788522000010,3,3,13
+Guerra e Paz,Liev Tolstói,Cosac Naify,1869,9788522000011,4,4,12
+Hamlet,William Shakespeare,Peixoto Neto,1603,9788522000012,5,5,14
+Moby Dick,Herman Melville,Via Leitura,1851,9788522000013,3,3,8
+A Odisséia,Homero,Ediouro,00,9788522000014,6,6,8
+Madame Bovary,Gustave Flaubert,Landmark,1856,9788522000015,4,4,6
+As Aventuras de Huckleberry Finn,Mark Twain,Principis,1884,9788522000016,5,5,8
+Ilíada,Homero,Nova Fronteira,10,9788522000017,3,3,8
+Os Miseráveis,Victor Hugo,L&PM Editores,1862,9788522000018,7,7,14
+Anna Kariênina,Liev Tolstói,Companhia das Letras,1877,9788522000019,5,5,6
+O Grande Gatsby,F. Scott Fitzgerald,BestBolso,1925,9788522000020,8,8,5
+O Apanhador no Campo de Centeio,J.D. Salinger,Editora do Autor,1951,9788522000021,6,6,5
+As Vinhas da Ira,John Steinbeck,Record,1939,9788522000022,4,4,14
+O Som e a Fúria,William Faulkner,Companhia das Letras,1929,9788522000023,2,2,14
+Lolita,Vladimir Nabokov,Alfaguara,1955,9788522000024,3,3,5
+O Processo,Franz Kafka,L&PM Editores,1925,9788522000025,5,5,5
+O Morro dos Ventos Uivantes,Emily Brontë,Martin Claret,1847,9788522000026,6,6,6
+Admirável Mundo Novo,Aldous Huxley,Biblioteca Azul,1932,9788522000027,7,7,10
+A Metamorfose,Franz Kafka,L&PM Editores,1915,9788522000028,4,4,5
+O Retrato de Dorian Gray,Oscar Wilde,Via Leitura,1890,9788522000029,5,5,11
+As Crônicas de Nárnia,C.S. Lewis,Martins Fontes,1950,9788522000030,8,8,9
+Drácula,Bram Stoker,DarkSide Books,1897,9788522000031,6,6,11
+Frankenstein,Mary Shelley,L&PM Editores,1818,9788522000032,5,5,11
+O Médico e o Monstro,Robert Louis Stevenson,Principis,1886,9788522000033,4,4,11
+Alice no País das Maravilhas,Lewis Carroll,Zahar,1865,9788522000034,7,7,9
+Viagem ao Centro da Terra,Júlio Verne,Principis,1864,9788522000035,6,6,10
+Vinte Mil Léguas Submarinas,Júlio Verne,L&PM Editores,1870,9788522000036,5,5,10
+A Volta ao Mundo em Oitenta Dias,Júlio Verne,Principis,1873,9788522000037,8,8,8
+O Fantasma da Ópera,Gaston Leroux,L&PM Editores,1910,9788522000038,4,4,11
+O Corcunda de Notre Dame,Victor Hugo,Martin Claret,1831,9788522000039,3,3,14
+A Ilha do Tesouro,Robert Louis Stevenson,Principis,1883,9788522000040,5,5,8
+O Chamado Selvagem,Jack London,L&PM Editores,1903,9788522000041,6,6,8
+Contos de Fadas,Hans Christian Andersen,Zahar,1835,9788522000042,7,7,9
+As Mil e Uma Noites,Anônimo,Nova Fronteira,800,9788522000043,5,5,9
+Os Três Mosqueteiros,Alexandre Dumas,L&PM Editores,1844,9788522000044,8,8,8
+O Conde de Monte Cristo,Alexandre Dumas,Zahar,1844,9788522000045,6,6,8
+O Pequeno Príncipe (Edição Especial),Antoine de Saint-Exupéry,Agir,2000,9788522000046,5,5,5
+O Sol é Para Todos,Harper Lee,José Olympio,1960,9788522000047,7,7,14
+A Revolução dos Bichos,George Orwell,Companhia das Letras,1945,9788522000048,4,4,5
+O Nome da Rosa,Umberto Eco,Record,1980,9788522000049,3,3,7
+Ensaio Sobre a Cegueira,José Saramago,Companhia das Letras,1995,9788522000050,6,6,10
+O Alquimista,Paulo Coelho,Paralela,1988,9788522000051,9,9,5
+A Menina que Roubava Livros,Markus Zusak,Intrínseca,2005,9788522000052,8,8,14
+Extraordinário,R.J. Palacio,Intrínseca,2012,9788522000053,7,7,5
+Cidades de Papel,John Green,Intrínseca,2008,9788522000054,6,6,5
+A Culpa é das Estrelas,John Green,Intrínseca,2012,9788522000055,9,9,6
+O Código Da Vinci,Dan Brown,Arqueiro,2003,9788522000056,5,5,7
+Inferno,Dan Brown,Arqueiro,2013,9788522000057,4,4,7
+Origem,Dan Brown,Arqueiro,2017,9788522000058,6,6,7
+O Silêncio dos Inocentes,Thomas Harris,Record,1988,9788522000059,3,3,11
+Gone Girl,Gillian Flynn,Intrínseca,2012,9788522000060,5,5,7
+A Garota no Trem,Paula Hawkins,Record,2015,9788522000061,7,7,7
+Onde Nascem os Monstros,Maurice Sendak,Cosac Naify,1963,9788522000062,4,4,9
+A Teia de Charlotte,E.B. White,HarperCollins,1952,9788522000063,5,5,9
+Matar um Rouxinol,Harper Lee,José Olympio,1960,9788522000064,6,6,14
+O Diário de Anne Frank,Anne Frank,Record,1947,9788522000065,8,8,15
+A Cor Púrpura,Alice Walker,Record,1982,9788522000066,3,3,14
+Beloved,Toni Morrison,Companhia das Letras,1987,9788522000067,2,2,14
+O Conto da Aia,Margaret Atwood,Rocco,1985,9788522000068,5,5,10
+A Estrada,Cormac McCarthy,Alfaguara,2006,9788522000069,4,4,10
+O Caçador de Pipas,Khaled Hosseini,Nova Fronteira,2003,9788522000070,7,7,14
+Mil Sóis Esplêndidos,Khaled Hosseini,Nova Fronteira,2007,9788522000071,6,6,14
+A Sombra do Vento,Carlos Ruiz Zafón,Companhia das Letras,2001,9788522000072,5,5,7
+A Biblioteca da Meia-Noite,Matt Haig,Intrínseca,2020,9788522000073,9,9,5
+O Colecionador de Ossos,Jeffery Deaver,Record,1997,9788522000074,4,4,7
+A Garota do Lago,Riley Sager,Faro Editorial,2017,9788522000075,5,5,7
+Verity,Colleen Hoover,Record,2018,9788522000076,8,8,6
+É Assim que Acaba,Colleen Hoover,Record,2016,9788522000077,9,9,6
+O Homem de Giz,C.J. Tudor,Intrínseca,2018,9788522000078,6,6,7
+A Paciente Silenciosa,Alex Michaelides,Record,2019,9788522000079,7,7,7
+O Instituto,Stephen King,Suma,2019,9788522000080,5,5,11
+It - A Coisa,Stephen King,Suma,1986,9788522000081,4,4,11
+Cujo,Stephen King,Suma,1981,9788522000082,3,3,11
+O Iluminado,Stephen King,Suma,1977,9788522000083,6,6,11
+Misery,Stephen King,Suma,1987,9788522000084,5,5,11
+Cemitério Maldito,Stephen King,1983,9788522000085,4,4,11
+A Torre Negra (O Pistoleiro),Stephen King,Suma,1982,9788522000086,7,7,9
+Carrie, a Estranha,Stephen King,Suma,1974,9788522000087,5,5,11
+Sob a Redoma,Stephen King,Suma,2009,9788522000088,8,8,10
+Doutor Sono,Stephen King,Suma,2013,9788522000089,6,6,11
+A Casa dos Espíritos,Isabel Allende,Bertrand Brasil,1982,9788522000090,5,5,14
+Paula,Isabel Allende,Bertrand Brasil,1994,9788522000091,4,4,15
+O Jogo do Anjo,Carlos Ruiz Zafón,Companhia das Letras,2008,9788522000092,3,3,7
+Marina,Carlos Ruiz Zafón,Companhia das Letras,1999,9788522000093,5,5,7
+O Palácio da Meia-Noite,Carlos Ruiz Zafón,Companhia das Letras,1994,9788522000094,6,6,9
+As Luzes de Setembro,Carlos Ruiz Zafón,Companhia das Letras,1995,9788522000095,7,7,9
+O Príncipe da Névoa,Carlos Ruiz Zafón,Companhia das Letras,1993,9788522000096,8,8,9
+O Labirinto dos Espíritos,Carlos Ruiz Zafón,Companhia das Letras,2016,9788522000097,9,9,7
+A Cidade Vapor,Carlos Ruiz Zafón,Companhia das Letras,2020,9788522000098,7,7,7
+A Noiva Cadáver,Tim Burton,Intrínseca,2005,9788522000099,6,6,9
+Coraline,Neil Gaiman,Intrínseca,2002,9788522000100,5,5,9

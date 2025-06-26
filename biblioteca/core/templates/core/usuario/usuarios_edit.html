@@ -1,3 +1,32 @@
+<!--
+  @file usuario_edit.html
+  @brief Template para a página de edição de usuário.
+
+  Este template estende o base.html e define o título e o conteúdo da página para editar um usuário existente.
+
+  @section title
+  Título da página definido como "Excluir Usuário".
+
+  @section content
+  Conteúdo principal que contém:
+    - Cabeçalho secundário indicando "Editar Usuario".
+    - Formulário para seleção do usuário a ser editado.
+    - Campos de edição: nome, e-mail, telefone.
+    - Proteção CSRF para segurança.
+    - Botão para salvar alterações.
+
+  @details
+  - O formulário envia dados via método POST para a URL nomeada 'usuario_edit'.
+  - O campo select popula opções com todos os usuários disponíveis.
+  - O campo select tenta pré-selecionar o usuário correto.
+  - Os campos de entrada são preenchidos com os dados do usuário atual para edição.
+  - O botão envia o formulário para o servidor para atualização dos dados.
+
+  @author ---
+  @version 1.0
+  @date 2025
+-->
+
 {% extends "core/base.html" %}
 {% block title %}Excluir Usuário{% endblock %}
 
@@ -25,4 +54,5 @@
         {% csrf_token %}
         
         <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
 {% endblock %}
